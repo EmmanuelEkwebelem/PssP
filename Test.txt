@@ -32,20 +32,18 @@ class Patients(db.Model):
     gender = db.Column(db.String(255), nullable=True)
     dob = db.Column(db.String(255), nullable=True)
     gender = db.Column(db.String(255), nullable=True)
-    race = db.Column(db.String(255))
-    insurance_type = db.Column(db.String(255), nullable=True)
-    contact_mobile = db.Column(db.String(255), nullable=True)
+    ssn = db.Column(db.String(255))
+    insurance = db.Column(db.String(255), nullable=True)
 
-    def __init__(self, mrn, first_name, last_name, zip_code, gender, dob, race, insurance_type, contact_mobile):
+    def __init__(self, mrn, first_name, last_name, zip_code, gender, dob, ssn, insurance):
         self.mrn = mrn
         self.first_name = first_name
         self.last_name = last_name
         self.zip_code = zip_code
         self.gender = gender
         self.dob = dob
-        self.race = race
-        self.insurance_type = insurance_type
-        self.contact_mobile = contact_mobile
+        self.ssn = ssn
+        self.insurance = insurance
 
     def to_json(self):
         return {
@@ -56,9 +54,8 @@ class Patients(db.Model):
             'zip_code': self.zip_code,
             'gender': self.gender,
             'dob': self.dob,
-            'race': self.race,
-            'insurance_type': self.insurance_type,
-            'contact_mobile': self.contact_mobile, 
+            'ssn': self.ssn,
+            'insurance': self.insurance
         }
 
 class Conditions_patient(db.Model):

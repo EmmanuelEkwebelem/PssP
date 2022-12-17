@@ -45,9 +45,10 @@
                         <th>Zip Code</th>
                         <th>Gender</th>
                         <th>Date of Birth</th>
-                        <th>SSN</th>
-                        <th>Insurance</th>
-                        <th>Setting</th>
+                        <th>Race</th>
+                        <th>Insurance Type</th>
+                        <th>Mobile Contact</th>
+                        <th>Settings</th>
 
                     </tr>
 
@@ -61,8 +62,9 @@
                         <td>{{row.zip_code}} </td>
                         <td>{{row.gender}}</td>
                         <td>{{row.dob}}</td>
-                        <td>{{row.ssn}}</td>
-                        <td>{{row.insurance}}</td>
+                        <td>{{row.race}}</td>
+                        <td>{{row.insurance_type}}</td>
+                        <td>{{row.contact_mobile}}</td>
                         <td>
                             <a href="/update/{{row.mrn}}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit{{row.mrn}}">Edit</a>
                             <a href="/delete/{{row.mrn}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
@@ -88,11 +90,11 @@
                                     <input type="text" class="form-control" name="mrn" value="{{row.mrn}}" readonly>
                                 </div>
                                 <div class="form-group">
-                                    <label>First name:</label>
+                                    <label>First Name:</label>
                                     <input type="text" class="form-control" name="first_name" value="{{row.first_name}}">
                                 </div>
                                 <div class="form-group">
-                                    <label>Last name:</label>
+                                    <label>Last Name:</label>
                                     <input type="text" class="form-control" name="last_name" value="{{row.last_name}}">
                                 </div>
                                 <div class="form-group">
@@ -104,13 +106,17 @@
                                     <input type="text" class="form-control" name="dob" value="{{row.dob}}">
                                 </div>
                                 <div class="form-group">
-                                    <label>SSN:</label>
-                                    <input type="text" class="form-control" name="ssn" value="{{row.ssn}}">
+                                    <label>Race:</label>
+                                    <input type="text" class="form-control" name="race" value="{{row.race}}">
                                 </div>
                                 <div class="form-group">
-                                    <label>Insurance:</label>
-                                    <input type="text" class="form-control" name="insurance" value="{{row.insurance}}">
+                                    <label>Insurance Type:</label>
+                                    <input type="text" class="form-control" name="insurance_type" value="{{row.insurance_type}}">
                                 </div> 
+                                <div class="form-group">
+                                    <label>Mobile Contact:</label>
+                                    <input type="text" class="form-control" name="contact_mobile" value="{{row.contact_mobile}}">
+                                </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary" type="submit">Update</button>
                                 </div>
@@ -170,12 +176,16 @@
                                 <input type="text" class="form-control" name="dob" required="1">
                             </div>
                             <div class="form-group">
-                                <label> SSN </label>
-                                <input type="text" class="form-control" name="ssn" required="1">
+                                <label>Race:</label>
+                                <input type="text" class="form-control" name="race" required="1">
                             </div>
                             <div class="form-group">
-                                <label> Insurance </label>
-                                <input type="text" class="form-control" name="insurance" required="1">
+                                <label>Insurance Type:</label>
+                                <input type="text" class="form-control" name="insurance_type" required="1">
+                            </div> 
+                            <div class="form-group">
+                                <label>Mobile Contact:</label>
+                                <input type="text" class="form-control" name="contact_mobile" required="1">
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit">Add Patient</button>
